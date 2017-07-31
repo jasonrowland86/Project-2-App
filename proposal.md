@@ -24,7 +24,12 @@ In the future this app could be expanded to:
 
 Wireframes:
 
- 
+![img_0864](https://git.generalassemb.ly/storage/user/7129/files/a6002f80-75ff-11e7-84ba-d55544fb7242)
+![img_0865](https://git.generalassemb.ly/storage/user/7129/files/a5efbc2c-75ff-11e7-85cb-2c0be7a187a2)
+![img_0866](https://git.generalassemb.ly/storage/user/7129/files/a60fbd6a-75ff-11e7-9b72-ce1fe0cca5e9)
+![img_0867](https://git.generalassemb.ly/storage/user/7129/files/a62e3858-75ff-11e7-9ae6-b10022dff0e4)
+![img_0869](https://git.generalassemb.ly/storage/user/7129/files/a61d9390-75ff-11e7-9983-803cbdb8bc75)
+
 
 App structure:
 
