@@ -14,6 +14,5 @@ CREATE TABLE IF NOT EXISTS picks
   name VARCHAR(255),
   nickname VARCHAR(255),
   weight_class VARCHAR(255),
-  -- winpick BOOLEAN,
   user_id INT REFERENCES users(id)
 );

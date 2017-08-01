@@ -48,7 +48,7 @@ app.get('/', (req, res)=>{
     documentTitle: 'MMA Betting Dashboard',
   });
 });
-views routes
+//views routes
 const dashboardRoutes = require('./routes/dashboard-routes');
 app.use('/dashboard', dashboardRoutes);
 const authRoutes = require('./routes/auth-routes');
