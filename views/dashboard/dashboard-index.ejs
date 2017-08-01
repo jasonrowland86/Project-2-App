@@ -1,3 +1,8 @@
 <% include ../partials/boilerplate %>
 
+<% data.forEach(todo => { %>
+  <h2><%= pick.name %></h2>
+  <h3><%= pick.weight_class %></h3>
+<% }) %>
+
 <% include ../partials/end %>

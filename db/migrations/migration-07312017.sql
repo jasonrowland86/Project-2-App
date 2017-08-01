@@ -1,4 +1,4 @@
-\c todo_review_dev;
+\c mma_dashboard_dev;
 
 CREATE TABLE IF NOT EXISTS users
 (
@@ -8,12 +8,12 @@ CREATE TABLE IF NOT EXISTS users
   email VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS fight_picks
+CREATE TABLE IF NOT EXISTS picks
 (
   id SERIAL PRIMARY KEY,
-  title VARCHAR(255),
-  description TEXT,
-  category VARCHAR(255),
-  completed BOOLEAN,
+  name VARCHAR(255),
+  nickname VARCHAR(255),
+  weight_class VARCHAR(255),
+  -- winpick BOOLEAN,
   user_id INT REFERENCES users(id)
 );

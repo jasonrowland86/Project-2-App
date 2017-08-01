@@ -43,7 +43,6 @@ app.listen(PORT, ()=>{
 
 //index route
 app.get('/', (req, res)=>{
-  res.send('hello world');
   res.render('index', {
     currentPage: 'Index',
     documentTitle: 'MMA Betting Dashboard',

@@ -1,3 +1,11 @@
 <% include ../partials/boilerplate %>
 
+<h2><%= pick.name %></h2>
+<h3><%= pick.weight_class %></h3>
+
+<a href='/dashboard/<%= pick.id %>/edit'>Edit</a>
+<form method='POST' action='/dashboard/<%= pick.id %>?_method=DELETE'>
+  <input type='submit' value='DELETE IT' />
+</form>
+
 <% include ../partials/end %>
