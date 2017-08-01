@@ -1,4 +1,4 @@
 var mma = require('mma');
- mma.fighter("Anderson Silva", function(data) {
+ mma.fighter("Connor MacGreggor", function(data) {
     console.log(data);
   });

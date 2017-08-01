@@ -37,7 +37,7 @@ This app will need user authentication. With out being logged in you could view
 up and coming fights but to view and use any other route a user will need to be
 logged in.
 
-Once logged in a users can view their fight picks page or view up and coming
+Once logged in a user can view their fight picks page or view up and coming
 fights. When the user clicks to view a particular match they will be directed to
 an page comparing the fighters stats. On that page a user can click to add a
 fighter to their fight picks list. The users list can be updated, edited, or
