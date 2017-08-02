@@ -1,23 +1,8 @@
 const express = require('express');
-const authRouter = express.Router();
-const passport = require('../services/auth/local');
-const authHelpers = require('../services/auth/auth-helpers');
-const usersController = require('../controllers/users-controller');
+const userRoutes = express.Router();
+const usersController = require('../controllers/user-controller');
+const authHelpers = require('../services/auth/auth-helper');
 
-authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
-  res.render('auth/login', {
-    currentPage: 'login',
-  });
-});
+userRoutes.get('/', authHelpers.loginRequired, usersController.index);
 
-authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
-  res.render('auth/register', {
-    currentPage: 'register',
-  });
-});
-
-authRouter.post('/register', usersController.create);
-
-
-
-module.exports = authRouter;
+module.exports = userRoutes;

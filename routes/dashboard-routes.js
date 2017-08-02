@@ -1,7 +1,7 @@
 const express = require('express');
 const dashboardRouter = express.Router();
 
-const authHelpers = require('../services/auth/auth-helpers');
+const authHelpers = require('../services/auth/auth-helper');
 const dashboardController = require('../controllers/dashboard-controller');
 
 dashboardRouter.get('/', authHelpers.loginRequired, dashboardController.index);

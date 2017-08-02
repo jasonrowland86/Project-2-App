@@ -1,7 +1,7 @@
 <% include ../partials/boilerplate %>
 
-<h1>Welcome back, <%= user.username %>! </h1>
-<p>user info goes here</p>
-<a href='/dashboard'>Home</a>
+<h1><%= user.username %> logged in!</h1>
+
+<a href='/auth/logout'>Log out</a>
 
 <% include ../partials/end %>

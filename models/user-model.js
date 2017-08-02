@@ -13,7 +13,7 @@ User.create = (user) => {
   return db.one(`
     INSERT INTO users
     (username, password_digest)
-    VALUES ($1, $2, $3)
+    VALUES ($1, $2)
     RETURNING *
   `, [user.username, user.password_digest]);
 };

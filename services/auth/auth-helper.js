@@ -14,9 +14,19 @@ function loginRequired(req, res, next) {
   return next();
 }
 
+function alreadyRegistered(req, res, next) {
+  if (req.user)
+  alert('You\'re already registered!');
+  return res.redirect('/auth/login');
+  return next();
+  //if user input already exist then
+  //alert already registered
+  //redirect to log in
+}
 
 module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
-}
+  alreadyRegistered,
+};

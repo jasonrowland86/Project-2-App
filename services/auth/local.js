@@ -2,8 +2,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');
-const User = require('../../models/user');
-const authHelpers = require('./auth-helpers');
+const User = require('../../models/user-model');
+const authHelpers = require('./auth-helper');
 
 const options = {};
 

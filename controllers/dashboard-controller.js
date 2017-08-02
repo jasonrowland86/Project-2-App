@@ -1,4 +1,4 @@
-const Dash = require('../models/todo');
+const Dash = require('../models/dashboard-model');
 
 const dashController = {};
 
@@ -18,7 +18,7 @@ dashController.show = (req, res) => {
   Dash.findById(req.params.id)
     .then(pick => {
       res.render('dashboard/dashboard-single', {
-        todo: todo,
+        pick: pick,
       })
     }).catch(err => {
       console.log(err);
