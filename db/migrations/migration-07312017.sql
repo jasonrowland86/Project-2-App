@@ -1,11 +1,10 @@
-\c mma_dashboard_dev;
+\c mma_dash_dev;
 
 CREATE TABLE IF NOT EXISTS users
 (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) UNIQUE NOT NULL,
-  password_digest TEXT,
-  email VARCHAR(255)
+  password_digest TEXT
 );
 
 CREATE TABLE IF NOT EXISTS picks
