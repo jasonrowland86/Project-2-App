@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' href='/styles/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/styles/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <title></title>
   </head>
   <body>
+    <nav>
+      <a href='/'>Home</a>
+      <% if(user) { %>
+        <p>User <%= user.username %> Logged in!</p>
+        <a href='/auth/logout'>Log Out</a>
+      <% }else { %>
+        <a href='/auth/login'>Log In</a>
+        <a href='/auth/register'>Register</a>
+      <% } %>
+    </nav>
+      <div id="background">
+        <div id="main">
+          <img src='../images/ufc_logo.png'>
+          <h1>FIGHT PICK APP</h1>
+        

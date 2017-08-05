@@ -1,0 +1,46 @@
+<% include ../partials/boilerplate %>
+
+<div class='main'>
+  
+  <div id='first' class='fighters'>
+    <div>
+      <!-- fighter img -->
+    </div>
+    <div>
+      <h2><%= fighter1.fullname %></h2>
+      <h3><%= fighter1.weight_class %></h3>
+      <h3><%= fighter1.weight %></h3>
+      <h3><%= fighter1.height %></h3>
+      <h2>Record</h2>
+      <h3>Wins: <%= fighter1.wins.total %></h3>
+      <h3>Losses: <%= fighter1.losses.total %></h3>
+    </div>
+  </div>
+
+  <div id='second' class='fighters'>
+    <div>
+      <!-- fighter img -->
+    </div>
+    <div>
+      <h1><%= fighter2.fullname %></h1>
+      <h3><%= fighter2.weight_class %></h3>
+      <h3><%= fighter2.weight %></h3>
+      <h3><%= fighter2.height %></h3>
+      <h2>Record</h2>
+      <h3>Wins: <%= fighter2.wins.total %></h3>
+      <h3>Losses: <%= fighter2.losses.total %></h3>
+    </div>
+
+  </div>
+
+
+  <!-- <form method='POST' action='/user'>
+
+    needs to send clicked on fighter data to user picks table
+
+    <input type='submit' value='Add Fighter' />
+  </form>
+
+</div> -->
+
+<% include ../partials/end %>

@@ -1,7 +1,15 @@
 <% include ../partials/boilerplate %>
 
-<h1><%= user.username %> logged in!</h1>
+<div class='main'>
 
-<a href='/auth/logout'>Log out</a>
+  <div id="searchFghters">
+    <form id='form1' action="/user" method="POST">
+      <input type='text' name='name1' placeholder="fighter name">
+      <input type='text' name='name2' placeholder="fighter name">
+      <input type="submit" class="submit">
+    </form>
+  </div>
+
+</div>
 
 <% include ../partials/end %>

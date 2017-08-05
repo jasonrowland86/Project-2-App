@@ -7,6 +7,8 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const passportlocal = require('passport-local');
+const mma = require('mma');
 
 //initialize app
 const app = express();
@@ -26,6 +28,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(mma.fighter());
 
 //static files
 app.use(express.static('public'));
@@ -45,12 +48,13 @@ app.listen(PORT, ()=>{
 app.get('/', (req, res)=>{
   res.render('index', {
     currentPage: 'Index',
-    documentTitle: 'MMA Betting Dashboard',
+    documentTitle: 'Fighter Stats',
+    user: req.user,
   });
 });
 //views routes
-const dashboardRoutes = require('./routes/dashboard-routes');
-app.use('/dashboard', dashboardRoutes);
+const mainRoutes = require('./routes/main-routes');
+app.use('/main', mainRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
