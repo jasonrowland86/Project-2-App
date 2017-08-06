@@ -1,43 +1,48 @@
 <% include ../partials/boilerplate %>
 
-<div class='main'>
+<div class="main">
 
-  <div id='first' class='fighters'>
-    <div>
-      <!-- fighter img -->
+  <div class='fighters'>
+
+    <div class='fighterImg'>
+      <img src="<%= fighter1.left_full_body_image %>" alt="">
     </div>
-    <div>
-      <h2><%= fighter1.first_name %></h2>
-      <!-- <h2 id='name'><%= fighter1.name %></h2> -->
-      <!-- <h3><%= fighter1.weight_class %></h3>
-      <h3><%= fighter1.weight %></h3>
-      <h3><%= fighter1.height %></h3>
-      <h1>Record</h1>
-      <h3>Wins: <%= fighter1.wins.total %></h3>
-      <h3>Losses: <%= fighter1.losses.total %></h3> -->
+
+      <div class='fighter1'>
+        <div class='totalName'>
+          <% name1 = fighter1.first_name +' '+ fighter1.last_name %>
+          <h1 id='name'><%= name1 %></h1>
+          <h3 class="nickname">"<%= fighter1.nickname %>"</h3>
+        </div>
+        <h2 class="weightclass"><%= fighter1.weight_class %></h2>
+        <h2 class="record">Record</h2>
+        <h3>Wins: <%= fighter1.wins %></h3>
+        <h3>Losses: <%= fighter1.losses %></h3>
+        <h3>Draws: <%= fighter1.draws %></h3>
+      </div>
+
+      <div class='fighter2'>
+        <div class='totalName'>
+          <% name2 = fighter2.first_name +' '+ fighter2.last_name %>
+          <h1 id='name'><%= name2 %></h1>
+          <h3 class="nickname">"<%= fighter2.nickname %>"</h3>
+        </div>
+        <h2 class="weightclass"><%= fighter1.weight_class %></h2>
+        <h2 class="record">Record</h2>
+        <h3>Wins: <%= fighter1.wins %></h3>
+        <h3>Losses: <%= fighter1.losses %></h3>
+        <h3>Draws: <%= fighter1.draws %></h3>
+      </div>
+
+    <div class='fighterImg'>
+      <img src="<%= fighter2.right_full_body_image %>" alt="">
     </div>
+
   </div>
 
-  <div id='second' class='fighters'>
-    <div>
-      <!-- fighter img -->
-    </div>
-    <div>
-      <!-- <h2 id='name'><%= fighter2.name %></h2> -->
-      <!-- <h3><%= fighter2.weight_class %></h3>
-      <h3><%= fighter2.weight %></h3>
-      <h3><%= fighter2.height %></h3>
-      <h1>Record</h1>
-      <h3>Wins: <%= fighter2.wins.total %></h3>
-      <h3>Losses: <%= fighter2.losses.total %></h3> -->
-    </div>
-
-  </div>
-
+</div>
   <!-- <form method='POST' action='/'>
     <input id="back" type="submit" value="Back">
   </form> -->
-
-</div>
 
 <% include ../partials/end %>
