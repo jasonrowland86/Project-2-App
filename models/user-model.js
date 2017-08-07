@@ -10,6 +10,7 @@ User.findByUserName = (username) => {
 };
 
 User.create = (user) => {
+  console.log(user);
   return db.one(`
     INSERT INTO users
     (username, password_digest)

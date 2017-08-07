@@ -1,5 +1,6 @@
 const User = require('../models/user-model');
 const bcrypt = require('bcryptjs');
+const Main = require('../models/main-model')
 // const getFighterData = require('getFighterData');
 
 const usersController = {};
@@ -37,64 +38,5 @@ usersController.create = (req, res, next) => {
   });
 };
 
-usersController.show = (req, res) => {
-  User.findById(req.params.id)
-    .then(pick => {
-      res.render('user/user-single', {
-        pick: pick,
-      })
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json({ err });
-    });
-}
-
-usersController.create = (req, res) => {
-  User.create({
-    match: req.body.title,
-    pick: req.body.description,
-    category: req.body.category,
-    user_id: req.user.id,
-  }).then(pick => {
-    console.log(pick);
-    res.redirect('/user');
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json({ err });
-  });
-};
-
-usersController.edit = (req, res) => {
-  User.findById(req.params.id)
-    .then(pick => {
-      res.render('user/user-edit', {
-        pick: pick,
-      })
-    }).catch(err => {
-    console.log(err);
-    res.status(500).json({ err });
-  });
-}
-
-usersController.update = (req, res) => {
-  User.update({
-    name: req.body.name,
-  }, req.params.id).then(pick => {
-    res.redirect('/user');
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json({ err });
-  });
-}
-
-usersController.delete = (req, res) => {
-  User.destroy(req.params.id)
-    .then(() => {
-      res.redirect('/user');
-    }).catch(err => {
-    console.log(err);
-    res.status(500).json({ err });
-  });
-}
 
 module.exports = usersController;

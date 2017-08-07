@@ -1,11 +1,12 @@
 <% include ../partials/boilerplate %>
 
-<a href='/auth/login'>Login</a>
+<img class='logo' src='../images/ufc_logo.png'>
+<h1>FIGHT PICK APP</h1>
 
 <div class="main">
 
   <form method='POST' action='/auth/register'>
-    <input name='username' type='text' placeholder='username' required />
+    <input name='username' type='text' placeholder='user name' required />
     <input name='password' type='password' placeholder='password' required />
     <input type='submit' value='Register' />
   </form>

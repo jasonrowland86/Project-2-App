@@ -9,37 +9,35 @@
     </div>
 
     <div class='fighter1'>
-      <div class='totalName'>
-        <% name1 = fighter1.first_name +' '+ fighter1.last_name %>
-        <h1 id='name'><%= name1 %></h1>
-        <h3 class="nickname">"<%= fighter1.nickname %>"</h3>
-      </div>
+      <% name1 = fighter1.first_name +' '+ fighter1.last_name %>
+      <h1 class='name'><%= name1 %></h1>
+      <h3 class="nickname">"<%= fighter1.nickname %>"</h3>
       <h2 class="weightclass"><%= fighter1.weight_class %></h2>
       <h2 class="record">Record</h2>
       <h3>Wins: <%= fighter1.wins %></h3>
       <h3>Losses: <%= fighter1.losses %></h3>
       <h3>Draws: <%= fighter1.draws %></h3>
 
-      <form method='POST' action='/user'>
-        <input class='add' type="submit" value="Add">
+      <form method='POST' action='/user/user-list'>
+        <input class='input' type='hidden' name='pick' value='<%= name1 %>'>
+        <input id='pick1' class="add" type="submit" value="Add Fighter">
       </form>
 
     </div>
 
     <div class='fighter2'>
-      <div class='totalName'>
-        <% name2 = fighter2.first_name +' '+ fighter2.last_name %>
-        <h1 id='name'><%= name2 %></h1>
-        <h3 class="nickname">"<%= fighter2.nickname %>"</h3>
-      </div>
-      <h2 class="weightclass"><%= fighter1.weight_class %></h2>
+      <% name2 = fighter2.first_name +' '+ fighter2.last_name %>
+      <h1 class='name'><%= name2 %></h1>
+      <h3 class="nickname">"<%= fighter2.nickname %>"</h3>
+      <h2 class="weightclass"><%= fighter2.weight_class %></h2>
       <h2 class="record">Record</h2>
-      <h3>Wins: <%= fighter1.wins %></h3>
-      <h3>Losses: <%= fighter1.losses %></h3>
-      <h3>Draws: <%= fighter1.draws %></h3>
+      <h3>Wins: <%= fighter2.wins %></h3>
+      <h3>Losses: <%= fighter2.losses %></h3>
+      <h3>Draws: <%= fighter2.draws %></h3>
 
-      <form method='POST' action='/user'>
-        <input class="add" type="submit" value="Add">
+      <form method='POST' action='/user/user-list'>
+        <input class='input' type='hidden' name='pick' value='<%= name2 %>'>
+        <input id='pick2' class="add" type="submit" value="Add Fighter">
       </form>
 
     </div>
@@ -51,8 +49,4 @@
   </div>
 
 </div>
-  <!-- <form method='POST' action='/'>
-    <input id="back" type="submit" value="Back">
-  </form> -->
-
 <% include ../partials/end %>

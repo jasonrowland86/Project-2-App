@@ -1,0 +1,18 @@
+<% include ../partials/boilerplate %>
+
+<img class='logo' src='../images/ufc_logo.png'>
+<h1>FIGHT PICK APP</h1>
+
+<div class='main'>
+
+  <h2 class="picks">Your Picks</h2>
+  <% picks.forEach(pick => { %>
+  <h3><%= pick.name %></h3>
+
+  <form method='POST' action='/main/<%= pick.id %>?_method=DELETE'>
+    <input class='stubmit' type='submit' value='DELETE' />
+ </form>
+
+</div>
+
+<% include ../partials/end %>

@@ -19,6 +19,13 @@
         <h3>Wins: <%= fighter1.wins %></h3>
         <h3>Losses: <%= fighter1.losses %></h3>
         <h3>Draws: <%= fighter1.draws %></h3>
+
+        <% if(user) { %>
+          <form method='POST' action='/user'>
+            <input class='add' type="submit" value="Add">
+          </form>
+        <% } %>
+
       </div>
 
       <div class='fighter2'>
@@ -27,12 +34,20 @@
           <h1 id='name'><%= name2 %></h1>
           <h3 class="nickname">"<%= fighter2.nickname %>"</h3>
         </div>
-        <h2 class="weightclass"><%= fighter1.weight_class %></h2>
+        <h2 class="weightclass"><%= fighter2.weight_class %></h2>
         <h2 class="record">Record</h2>
-        <h3>Wins: <%= fighter1.wins %></h3>
-        <h3>Losses: <%= fighter1.losses %></h3>
-        <h3>Draws: <%= fighter1.draws %></h3>
+        <h3>Wins: <%= fighter2.wins %></h3>
+        <h3>Losses: <%= fighter2.losses %></h3>
+        <h3>Draws: <%= fighter2.draws %></h3>
+
+        <% if(user) { %>
+          <form method='POST' action='/user'>
+            <input class='add' type="submit" value="Add">
+          </form>
+        <% } %>
+        
       </div>
+
 
     <div class='fighterImg'>
       <img src="<%= fighter2.right_full_body_image %>" alt="">

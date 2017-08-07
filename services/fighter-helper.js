@@ -1,7 +1,7 @@
 const mma = require('mma');
 require('isomorphic-fetch');
 
-
+// stack overflow options
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -40,7 +40,6 @@ function getFighterData(req, res, next) {
   .then(response => response.json())
 
   .then(response => {
-    // let fighter1 = response.filter(r =>  r.first_name  === req.body.name1 )
     let fighter1 = response.filter(r =>
       `${r.first_name}` + ' ' + `${r.last_name}`  === req.body.name1 )
       console.log('fighter1', fighter1[0].first_name);

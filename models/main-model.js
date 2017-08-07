@@ -1,43 +1,43 @@
 const db = require('../db/config');
-const Dash = {};
+const Main = {};
 
-Dash.findAll = (id) => {
+Main.findAll = (id) => {
   return db.query(`
     SELECT * FROM picks
     WHERE user_id = $1
     `, [id]);
 };
 
-Dash.create = (pick) => {
+Main.create = (pick) => {
+  console.log(pick);
   return db.one(`
     INSERT INTO picks
-    (name, weight_class, user_id)
-    VALUES ($1, $2, $3)
+    (name, user_id)
+    VALUES ($1, $2)
     RETURNING *
-  `, [pick.title, pick.weight_class, pick.user_id]);
+  `, [pick.name, pick.user_id]);
 };
 
 
 
-Dash.findById = (id) => {
+Main.findById = (id) => {
   return db.oneOrNone(`
   SELECT * FROM picks
   WHERE id = $1
   `, [id]);
 };
 
-Dash.update = (pick, id) => {
+Main.update = (pick, id) => {
   return db.one(`
     UPDATE picks SET
     name = $1,
-    weight_class = $2,
-    user_id = $3
-    WHERE id = $4
+    user_id = $2,
+    WHERE id = $3
     RETURNING *
-  `, [pick.name, pick.weight_class, pick.user_id, id]);
+  `, [pick.name, pick.user_id, id]);
 };
 
-Dash.destroy = (id) => {
+Main.destroy = (id) => {
   return db.none(`
     DELETE FROM picks
     WHERE id = $1
@@ -45,4 +45,4 @@ Dash.destroy = (id) => {
 }
 
 
-module.exports = Dash;
+module.exports = Main;
