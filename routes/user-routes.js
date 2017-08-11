@@ -5,17 +5,18 @@ const authHelpers = require('../services/auth/auth-helper');
 const fighterHelpers = require('../services/fighter-helper');
 const mainController = require('../controllers/main-controller');
 
+
+userRoutes.post('/', authHelpers.loginRequired, usersController.add);
 userRoutes.get('/', authHelpers.loginRequired, usersController.index);
 
-userRoutes.post('/', authHelpers.loginRequired, fighterHelpers.getFighterData, usersController.fighter);
-
-userRoutes.post('/', authHelpers.loginRequired, mainController.create1);
-userRoutes.post('/', authHelpers.loginRequired, mainController.create2);
-
-userRoutes.get('/',(req,res)=>{
-  res.render('user/user-list',{})
-})
 //
+// userRoutes.post('/', authHelpers.loginRequired, mainController.add);
+// userRoutes.post('/', authHelpers.loginRequired, mainController.create2);
+//
+// userRoutes.get('/user',(req,res)=>{
+//   res.render('user/user-list',{})
+// })
+// //
 // userRoutes.get('/:id', mainController.show)
 // userRoutes.put('/:id', mainController.update)
 

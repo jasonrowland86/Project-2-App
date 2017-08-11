@@ -5,19 +5,9 @@ const Main = require('../models/main-model')
 
 const usersController = {};
 
-usersController.fighter = (req, res)=>{
-  console.log('Got fighter!');
-  res.render('user/user-add', {
-    fighter1: res.locals.fighter1,
-    fighter2: res.locals.fighter2,
-    user: req.user,
-  });
-};
-
 usersController.index = (req, res) => {
   res.render('user/user-index', {
     user: req.user,
-    data: 'User profile',
   });
 };
 
@@ -37,6 +27,38 @@ usersController.create = (req, res, next) => {
     res.status(500).json({ err });
   });
 };
+// ***********************************
 
+usersController.add = (req, res) => {
+  console.log('adding', req.body)
+  Main.create({
+    name: name1,
+    // weight_class: fighter1.weight_class,
+    user_id: req.user.id,
+  }).then(pick => {
+    res.redirect('/user');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({ err });
+  });
+}
+
+// usersController.add2 = (req, res) => {
+//   console.log('adding', req.body)
+//   Main.create({
+//     name: name2,
+//     // weight_class: fighter1.weight_class,
+//     user_id: req.user.id,
+//   }).then(pick => {
+//     console.log('pick', pick);
+//     res.render('user/user-list', {
+//       user: req.user,
+//       picks: req.picks,
+//     });
+//   }).catch(err => {
+//     console.log(err);
+//     res.status(500).json({ err });
+//   });
+// }
 
 module.exports = usersController;

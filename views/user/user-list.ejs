@@ -5,14 +5,14 @@
 
 <div class='main'>
 
-  <h2 class="picks">Your Picks</h2>
+  <h2 class="picks">Your Fight Picks</h2>
   <% picks.forEach(pick => { %>
   <h3><%= pick.name %></h3>
-  <% } %>
+  <% }); %>
 
-  <form method='POST' action='/main/<%= pick.id %>?_method=DELETE'>
+  <!-- <form method='POST' action='/main/<%= pick.id %>?_method=DELETE'>
     <input class='stubmit' type='submit' value='DELETE' />
- </form>
+ </form> -->
 
 </div>
 

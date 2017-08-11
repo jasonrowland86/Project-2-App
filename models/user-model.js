@@ -19,4 +19,15 @@ User.create = (user) => {
   `, [user.username, user.password_digest]);
 };
 
+// User.create = (pick) => {
+//   console.log(pick);
+//   return db.one(`
+//     INSERT INTO picks
+//     (name, user_id)
+//     VALUES ($1, $2)
+//     RETURNING *
+//   `, [pick.name, pick.user_id]);
+// };
+
+
 module.exports = User;

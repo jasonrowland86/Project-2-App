@@ -18,7 +18,7 @@
       <h3>Losses: <%= fighter1.losses %></h3>
       <h3>Draws: <%= fighter1.draws %></h3>
 
-      <form method='POST' action='/user/user-list'>
+      <form method='POST' action='/user'>
         <input class='input' type='hidden' name='pick' value='<%= name1 %>'>
         <input id='pick1' class="add" type="submit" value="Add Fighter">
       </form>
@@ -35,7 +35,7 @@
       <h3>Losses: <%= fighter2.losses %></h3>
       <h3>Draws: <%= fighter2.draws %></h3>
 
-      <form method='POST' action='/user/user-list'>
+      <form method='POST' action='/user/user'>
         <input class='input' type='hidden' name='pick' value='<%= name2 %>'>
         <input id='pick2' class="add" type="submit" value="Add Fighter">
       </form>
