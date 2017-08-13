@@ -49,10 +49,6 @@ function getFighterData(req, res, next) {
   })
 }
 
-// function addFighterData(req, res, next) {
-//
-// }
-
 
 module.exports = {
   getFighterData: getFighterData,

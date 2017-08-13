@@ -6,9 +6,16 @@ const Main = require('../models/main-model')
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.render('user/user-index', {
-    user: req.user,
-  });
+  Main.findAll(req.user.id)
+    .then(picks => {
+      res.render('user/user-index', {
+        user: req.user,
+        picks: picks,
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
+    });
 };
 
 usersController.create = (req, res, next) => {
@@ -30,9 +37,9 @@ usersController.create = (req, res, next) => {
 // ***********************************
 
 usersController.add = (req, res) => {
-  console.log('adding', req.body)
+  console.log('adding', req.body);
   Main.create({
-    name: name1,
+    name: req.body.name,
     // weight_class: fighter1.weight_class,
     user_id: req.user.id,
   }).then(pick => {

@@ -12,6 +12,7 @@
     <nav>
       <a class='home' href='/'>Home</a>
       <% if(user) { %>
+        <a class='home' href='/user'>Fight Picks</a>
         <p class="user"><%= user.username %> Logged In</p>
         <a href='/auth/logout'>Log Out</a>
       <% }else { %>

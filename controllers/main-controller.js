@@ -2,7 +2,7 @@ const mainController = {};
 const Main = require('../models/main-model');
 
 
-mainController.fighter = (req, res)=>{
+mainController.fighter = (req, res, next)=>{
     console.log('Got fighter!');
     res.render('main/main', {
       fighter1: res.locals.fighter1,
@@ -23,48 +23,21 @@ mainController.index = (req, res) => {
     });
 };
 
-mainController.show = (req, res) => {
-  Main.findById(req.params.id)
-    .then(pick => {
-      res.render('user/user-single', {
-        pick: pick,
-      })
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json({ err });
-    });
-}
-
-// mainController.add = (req, res) => {
-//   console.log(req.body);
-//   Main.create({
-//     name: name1,
-//     // weight_class: fighter1.weight_class,
-//     user_id: req.user.id,
-//   }).then(pick => {
-//     console.log(pick);
-//     res.redirect('/user-list');
-//   }).catch(err => {
-//     console.log(err);
-//     res.status(500).json({ err });
-//   });
+// mainController.show = (req, res) => {
+//   Main.findById(req.params.id)
+//     .then(pick => {
+//       res.render('user/user-single', {
+//         pick: pick,
+//       })
+//     }).catch(err => {
+//       console.log(err);
+//       res.status(500).json({ err });
+//     });
 // }
 
-// mainController.add2 = (req, res) => {
-//   Main.create({
-//     name: name2,
-//     // weight_class: fighter2.weight_class,
-//     user_id: req.user.id,
-//   }).then(pick => {
-//     console.log(pick);
-//     res.redirect('user/user-list');
-//   }).catch(err => {
-//     console.log(err);
-//     res.status(500).json({ err });
-//   });
-// };
 
 mainController.delete = (req, res) => {
+  console.log('Deleted!');
   Main.destroy(req.params.id)
     .then(() => {
       res.redirect('/user');
@@ -73,5 +46,7 @@ mainController.delete = (req, res) => {
     res.status(500).json({ err });
   });
 }
+
+
 
 module.exports = mainController;

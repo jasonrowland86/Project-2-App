@@ -3,15 +3,26 @@
 <img class='logo' src='../images/ufc_logo.png'>
 <h1>FIGHT PICK APP</h1>
 
-<div class='main'>
+<div class='userMain'>
 
-  <div id="searchFghters">
-    <form id='form1' action="/main" method="POST">
-      <input type='text' name='name1' placeholder="fighter name">
+  <div id="searchFghtersUser">
+    <form action="/main" method="POST">
+      <input class='userSearch' type='text' name='name1' placeholder="fighter name">
       <h1>VS</h1>
-      <input type='text' name='name2' placeholder="fighter name">
+      <input class='userSearch' type='text' name='name2' placeholder="fighter name">
       <input type="submit" class="submit">
     </form>
+  </div>
+
+
+  <div id='list'>
+    <h1 class="name">Your Fight Picks</h1>
+    <% picks.forEach(pick => { %>
+    <h3 class='pick'><a href='/user-single'><%= pick.name %></a></h3>
+    <form id='delete' action="/user/<%= pick.id %>?_method=DELETE" method="POST">
+      <input type='submit' class='submit' value='Delete'>
+    </form>
+    <% }); %>
   </div>
 
 </div>
