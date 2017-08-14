@@ -1,4 +1,4 @@
-\c mma_dash_dev;
+-- \c mma_dash_dev;
 
 CREATE TABLE IF NOT EXISTS users
 (
