@@ -21,7 +21,7 @@
 
         <% if(user) { %>
           <form action='/user' method="POST">
-            <input type="hidden" name=<%= name1 %> value=<%= name1 %> />
+            <input type="hidden" name="name" value=<%= name1 %> />
             <input type="hidden" name="id" value=<%= fighter1.id %> />
             <input class='add' type="submit" value="Add Fighter">
           </form>
