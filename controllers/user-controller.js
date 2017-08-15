@@ -19,6 +19,7 @@ usersController.index = (req, res) => {
 };
 
 usersController.create = (req, res, next) => {
+  console.log('create');
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
   User.create({

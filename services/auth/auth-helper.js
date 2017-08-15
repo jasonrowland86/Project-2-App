@@ -15,9 +15,11 @@ function loginRequired(req, res, next) {
 }
 
 function alreadyRegistered(req, res, next) {
-  if (req.user)
-  alert('You\'re already registered!');
-  return res.redirect('/auth/login');
+  console.log('registered');
+  if (req.user) {
+    //alert('You\'re already registered!');
+    return res.redirect('/auth/login');
+  }
   return next();
   //if user input already exist then
   //alert already registered
